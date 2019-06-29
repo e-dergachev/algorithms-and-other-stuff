@@ -1,1 +1,1 @@
-"# algorithms-and-other-stuff" 
+It's just a bunch of implementations of a few simple algorithms.
