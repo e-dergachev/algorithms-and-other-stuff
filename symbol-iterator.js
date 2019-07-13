@@ -47,7 +47,7 @@ const days_gen = { //with generator
     [Symbol.iterator]:  function*() {
         const bodyKeys = Object.keys(this.body);
         for (let key of bodyKeys) {
-          yield this.body[key];
+            yield this.body[key];
         }
     }    
 };

@@ -21,13 +21,15 @@ const choose_stuff = (items, resources) => {
             }
             if (previous_max < items[i][1] + remained_space_value) {
                 history.push(items[i][0]);
+                cell[i][j] = [items[i][1] + remained_space_value, [...new Set(history)]]; //removing duplicate values
             }
-            history = [...new Set(history)]; //removing duplicate values
-            cell[i][j] = [Math.max(previous_max, items[i][1] + remained_space_value), history];
+            else {
+                cell[i][j] = [previous_max, [...new Set(history)]];
+            }
         }
     }
     let result = cell[items.length-1];
-    return result[result.length - 1];
+    return result[result.length-1];
 };
 
 const items_to_pick_1 = [ //name, value, size
