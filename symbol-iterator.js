@@ -55,3 +55,15 @@ const days_gen = { //with generator
 for (let day of days_gen) {
     console.log(day);
 }
+
+function Iterable(length) { //generator with a constructor function
+    this.length = length;
+}
+Iterable.prototype[Symbol.iterator] = function*() {
+    for (let i=0; i < this.length; i++) {
+        yield (Math.random().toFixed(2) * 2).toFixed(2);
+    }
+}
+
+const it = new Iterable(6);
+console.log([... it]);
